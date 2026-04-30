@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #2563eb;
+  --color-primary-light: #eff6ff;
+  --color-bg-main: #f8fafc;
+  --color-border-main: #e2e8f0;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+  --color-success-main: #10b981;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-bg-main text-text-main antialiased;
+  }
+}
+
+.nav-item-active {
+  @apply text-primary bg-primary-light border-r-3 border-primary;
+}
+
+.calendar-cell {
+  @apply border-r border-b border-border-main p-2 relative transition-colors hover:bg-gray-50;
+}
+
+.calendar-cell:nth-child(7n) {
+  @apply border-r-0;
+}
